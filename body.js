@@ -1,13 +1,13 @@
 const prompt = require('prompt-sync')();
 
 function calculSnack(moneys) {
-    return (moneys * 10) / 100;
+    return (moneys * 20) / 100;
 }
 
 function neuroWealthAndavanandro(name) {
-    const moneys = Number(prompt('What cost your money today: ')) || 0;
-    const travelExpenses = Number(prompt('How much do you travel in bus: ')) || 0;
-    const nsnack = Number(prompt('How much do you eat snack in journey: ')) || 0;
+    const moneys = Number(prompt('Ohatrinona ny volanao androany')) || 0;
+    const travelExpenses = Number(prompt('Impiry ianao mandeha bus: ')) || 0;
+    const nsnack = Number(prompt('Impiry mihinana ody vavony: ')) || 0;
 
     let neuroWealthMin = 0;
     let neuroWealthAvg = 0;
@@ -36,52 +36,51 @@ function neuroWealthAndavanandro(name) {
     neuroWealthAvg = Math.max(0, neuroWealthAvg);
     neuroWealthMax = Math.max(0, neuroWealthMax);
 
-    console.log(name + " today you have " + neuroWealthMin + " min");
-    console.log(name + " today you have " + neuroWealthAvg + " avg");
-    console.log(name + " today you have " + neuroWealthMax + " max");
+    console.log(name + " androany ianao manana " + neuroWealthMin + " farafakeliny");
+    console.log(name + " androany ianao manana " + neuroWealthAvg + " antonony");
+    console.log(name + " androany ianao manana " + neuroWealthMax + " farafabetsany");
 
-    // ----- prompt detail une seule fois -----
     const details = Number(prompt(
-        '\nChoose to view details:1_neuroWealthMin , 2_neuroWealthAvg ,3_neuroWealthMax: '
+        '\nMisafidiana hijery am-potony :1_neuroWealthMin , 2_neuroWealthAvg ,3_neuroWealthMax: '
     ));
 
-    console.log(""); // espace vide pour lisibilité
+    console.log("");
 
     if (details === 1) {
-        console.log("--- Détail: neuroWealthMin ---");
-        console.log("Travel expenses: " + singleTripCost);
-        console.log("Snack cost: " + snackCost);
-        console.log("Total money: " + moneys);
-        console.log("Remaining: " + neuroWealthMin);
+        console.log("--- Fanazavana: neuroWealthMin ---");
+        console.log("Sarab-dalana: " + singleTripCost);
+        console.log("ody vavony: " + snackCost);
+        console.log("vola rehetra: " + moneys);
+        console.log("eco: " + neuroWealthMin);
     } else if (details === 2) {
-        console.log("--- Détail: neuroWealthAvg ---");
+        console.log("--- Fanazavana: neuroWealthAvg ---");
         if (travelExpenses > 2) {
-            console.log("Travel expenses: " + roundTripCost);
-            console.log("Snack cost: " + halfSnackCost);
+            console.log("Sarab-dalana: " + roundTripCost);
+            console.log("ody vavony: " + halfSnackCost);
         } else if (travelExpenses === 2) {
-            console.log("Walking + Bus: " + singleTripCost);
-            console.log("Snack cost: " + halfSnackCost);
+            console.log("mandeha tongotra + Bus: " + singleTripCost);
+            console.log("ody vavony: " + halfSnackCost);
         } else {
-            console.log("Travel: " + singleTripCost);
-            console.log("Snack cost: " + snackCost);
+            console.log("mandeha bus: " + singleTripCost);
+            console.log("ody vavony: " + snackCost);
         }
-        console.log("Total money: " + moneys);
-        console.log("Remaining: " + neuroWealthAvg);
+        console.log("vola rehetra: " + moneys);
+        console.log("eco: " + neuroWealthAvg);
     } else if (details === 3) {
-        console.log("--- Détail: neuroWealthMax ---");
+        console.log("--- Fanazavana: neuroWealthMax ---");
         if (travelExpenses === 2) {
-            console.log("Travel: " + singleTripCost);
-            console.log("No snack");
+            console.log("mandeha bus: " + singleTripCost);
+            console.log("tsy misy gouter");
         } else if (travelExpenses > 2) {
-            console.log("Travel: " + roundTripCost);
-            console.log("No snack (bus trip)");
+            console.log("mandeha bus: " + roundTripCost);
+            console.log("Tsy misy sakafo maivana (dia amin'ny bus)");
         } else {
-            console.log("No travel or snack cost");
+            console.log("tss bus ,tss ody vavony");
         }
-        console.log("Total money: " + moneys);
-        console.log("Remaining: " + neuroWealthMax);
+        console.log("vola rehetra: " + moneys);
+        console.log("eco: " + neuroWealthMax);
     } else {
-        console.log("Invalid choice. Please enter 1, 2 or 3.");
+        console.log("Misafidiana 1, 2 or 3.");
     }
 
     return { neuroWealthMin, neuroWealthAvg, neuroWealthMax };
