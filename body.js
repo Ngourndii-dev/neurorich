@@ -22,7 +22,12 @@ function neuroWealthAndavanandro(name) {
         neuroWealthMin = moneys - (roundTripCost + snackCost);
         neuroWealthAvg = moneys - (singleTripCost + snackCost);
         neuroWealthMax = moneys - halfSnackCost;
-    } else if (travelExpenses === 2) {
+    }else if(travelExpenses===0) {
+        neuroWealthMin = moneys - (roundTripCost + snackCost);
+        neuroWealthAvg = moneys - (singleTripCost + snackCost);
+        neuroWealthMax = moneys - halfSnackCost;
+    }
+    else if (travelExpenses === 2) {
         neuroWealthMin = moneys - (roundTripCost + snackCost);
         neuroWealthAvg = moneys - (singleTripCost + halfSnackCost);
         neuroWealthMax = moneys - singleTripCost;
@@ -48,7 +53,7 @@ function neuroWealthAndavanandro(name) {
 
     if (details === 1) {
         console.log("--- Fanazavana: neuroWealthMin ---");
-        console.log("Sarab-dalana: " + singleTripCost);
+        console.log("Saran-dalana: " + singleTripCost);
         console.log("ody vavony: " + snackCost);
         console.log("vola rehetra: " + moneys);
         console.log("eco: " + neuroWealthMin);
@@ -60,7 +65,11 @@ function neuroWealthAndavanandro(name) {
         } else if (travelExpenses === 2) {
             console.log("mandeha tongotra + Bus: " + singleTripCost);
             console.log("ody vavony: " + halfSnackCost);
-        } else {
+        }else if(travelExpenses===0){
+            console.log("mandeha tongotra ");
+            console.log("ody vavony: " + halfSnackCost);
+        } 
+        else {
             console.log("mandeha bus: " + singleTripCost);
             console.log("ody vavony: " + snackCost);
         }
@@ -74,7 +83,11 @@ function neuroWealthAndavanandro(name) {
         } else if (travelExpenses > 2) {
             console.log("mandeha bus: " + roundTripCost);
             console.log("Tsy misy sakafo maivana (dia amin'ny bus)");
-        } else {
+        }else if(travelExpenses===0){
+            console.log("mandeha tongotra ");
+            console.log("ody vavony: " + halfSnackCost);
+        } 
+         else {
             console.log("tss bus ,tss ody vavony");
         }
         console.log("vola rehetra: " + moneys);
@@ -85,6 +98,4 @@ function neuroWealthAndavanandro(name) {
 
     return { neuroWealthMin, neuroWealthAvg, neuroWealthMax };
 }
-
 module.exports = { neuroWealthAndavanandro };
-
