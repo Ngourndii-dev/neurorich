@@ -4,7 +4,7 @@ const sinonChai = require('sinon-chai');
 const expect = chai.expect;
 chai.use(sinonChai);
 
-const { intro } = require('../code'); // Ajustez le chemin selon votre structure
+const { intro } = require('../intro');
 
 describe('Tests de logique sur les inputs', () => {
 
